@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive | navbar</title>
+    <style>
+        body{
+            background-color: #ecf0f3;
+            margin:0 auto;
+            height:400vh;
+        }
+        body::-webkit-scrollbar{
+            display:none;
+        }
+        nav{
+            border:1px solid black;
+            border-radius:20px;
+            width:99%;
+            height:30px;
+            position:fixed;
+            left:5px;
+            top:3px;
+            background-color:rgba(255 255 255/50%);
+            backdrop-filter:blur(50px);
+        }
+        .logo{
+            position: fixed;
+            top:-19px;
+            left: 12px;
+            float:left;
+        }
+        .list a{
+            color: purple;
+            text-decoration: none;
+            font-size: 16px;
+            padding:5px 10px 5px 10px;
+            border-radius:15px 15px 15px 15px;
+            border-left:0.5px solid black;
+            float: right;
+            transition:0s;
+            height:20px;
+            display:block;
+        }
+        .list a:hover{
+            box-shadow:inset 0px -5px 0px purple;
+            background-color:#ecf0f0;
+            position:relative;
+            top:-2px;
+            border-top:1px solid black;
+            color:black;
+        }
+        #ham{
+            display:none;
+        }
+        #pop-up{
+            display:none;
+        }
+        @media (max-width:768px){
+            body::-webkit-scrollbar{
+            display:none;
+            }
+            body{
+                background-color:#ecf0f3;
+            }
+            nav .list{
+                display:none;
+            }
+            nav .logo{
+                font-size: 8px;
+                top:8px;
+                left:10px;
+            }
+            nav .logo h2{
+                padding-top:0px;
+                margin-top: 0px;
+            }
+            nav #ham{
+                display:block;
+                position:absolute;
+                left:90%;
+                top: 20%;
+                font-size: larger;
+            }
+            nav #ham a{
+                text-decoration: none;
+                color:purple;
+            }
+            nav{
+                z-index: 999;
+            }
+            #pop-up{
+                display:block;
+                width:200px;
+                height:300px;
+                z-index: 998;
+                position:fixed;
+                border-radius: 20px;
+                top:37px;
+                left:43%;
+                background-color:rgba(255 255 255/30%);
+                backdrop-filter:blur(100px);
+                border: 1px solid black;
+                display: none;
+            }
+            #pop-up a{
+                display:block;
+                text-decoration: none;
+                text-align: center;
+                border-top:0.5px solid #545555;
+                padding-top:20px;
+                padding-bottom:20px;
+                color:purple;
+                background-color: rgba(255 255 255/10%);
+            }
+            #pop-up a:hover{
+                border-bottom:5px solid purple;
+                background-color:#ecf0f3;
+                box-shadow: inset 3px 3px 5px #cbced1,inset -3px -3px 5px #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><h2>Nagalapuram <span id="s" style="color:purple;">Hareeswar</span></h2></div>
+        <div class="list">
+			<a href="#"><i class="fa fa-phone"></i> Contact Me</a>
+			<a href="#"><i class="fa fa-id-card-o"></i> About Me</a>
+			<a href="#"><i class="fa fa-briefcase"></i> Portfolio</a>
+			<a href="#"><i class="fa fa-code"></i> Experience</a>
+			<a href="#"><i class="fa fa-home"></i> Home</a>
+		</div>
+        <div id="ham">
+            <a id="icon" href="#"><i class="fa fa-bars"></i></a>
+        </div>
+    </nav>
+    <div id="pop-up">
+            <a style="border-radius:20px 20px 0px 0px;" href="#"><i class="fa fa-home"></i> Home</a>
+			<a href="#"><i class="fa fa-code"></i> Experience</a>
+			<a href="#"><i class="fa fa-briefcase"></i> Portfolio</a>
+			<a href="#"><i class="fa fa-id-card-o"></i> About Me</a>
+			<a style="border-radius:0px 0px 20px 20px;" href="#"><i class="fa fa-phone"></i> Contact Me</a>
+    </div>
+    <script>
+        let demo = document.getElementById("ham");
+        demo.addEventListener("click", options);
+        let a=0;
+        function options() {
+            if(a==0){
+                document.getElementById("pop-up").style.display= "block";
+                a++;
+            }else{
+            document.getElementById("pop-up").style.display= "none";
+            a--;
+            }
+        }
+    </script>
+</body>
+</html>
