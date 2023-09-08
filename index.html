@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>responsive | navbar</title>
+    <title>Hareeswar | Portfolio</title>
     <style>
         body{
             background-color: #ecf0f3;
@@ -24,6 +24,7 @@
             top:3px;
             background-color:rgba(255 255 255/50%);
             backdrop-filter:blur(50px);
+            z-index: 999;
         }
         .logo{
             position: fixed;
@@ -57,6 +58,96 @@
         #pop-up{
             display:none;
         }
+        .intro{
+            background-color:#ecf0f3;
+            width:90%;
+            height:600px;
+            position:relative;
+            top:50px;
+            left:5%;	
+            border-radius:20px;
+            box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
+        }
+        .hi{
+        animation-name:shake;
+        animation-duration:1s;
+        animation-iteration-count:infinite;
+        position:absolute;
+        top:-5px;
+        }
+        @keyframes shake{
+            0% {tranform:rotate(0deg);}
+            25% {tranform:rotate(40deg);}
+            50% {transform:rotate(-40deg);}
+            100% {tranform:rotate(0deg);}
+        }
+        .intro-left{
+            background-color:#ecf0f3;
+            width:50%;
+            height:100%;
+            float:left;
+            border-radius:20px 20px;
+            position:relative;
+        }
+        .intro-left h1{
+            position:relative;
+            top:200px;
+            left:100px;
+            width: fit-content;
+            font-size:150%;
+            transition:1s;
+        }
+        .social{
+            position:absolute;
+            top: 70%;
+            left:20%;
+            font-size :25px;
+            background-color: #ecf0f3;
+            transition:1s;
+        }
+        .social a{
+            margin:10px;
+            border: 0px solid black;
+            padding:10px 13px 10px 13px;
+            height:10px;
+            text-decoration: none;
+            color:purple;
+            border-radius:50%;
+            box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
+        }
+        .social .github:hover{
+            background: #ecf0f3;
+            color:black;
+            transition: 0.5s;
+            box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
+        }
+        .social .linkedin:hover{
+            background: rgb(0, 88, 165);
+            color:white;
+            transition: 0.5s;
+            box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
+        }
+        .social .instagram:hover{
+            background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            color:white;
+            transition: 0.5s;
+            box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
+        }
+        .intro-right{
+            background-color: purple;
+            float: right;
+            width: 50%;
+            height: 100%;
+            border-radius: 0px 20px 20px 0px;
+            animation: 1s;
+        }
+
+
+
+/*___________________________responsive-css___________________________________*/
+
+
+
         @media (max-width:768px){
             body::-webkit-scrollbar{
             display:none;
@@ -83,7 +174,7 @@
                 top: 20%;
                 font-size: larger;
             }
-            nav #ham a{
+            nav #ham i{
                 text-decoration: none;
                 color:purple;
             }
@@ -119,10 +210,47 @@
                 background-color:#ecf0f3;
                 box-shadow: inset 3px 3px 5px #cbced1,inset -3px -3px 5px #fff;
             }
+            .intro-left{
+                width:100%;
+                height:40%;
+            }
+            .intro-left h1{
+                position:relative;
+                top:50px;
+                left:30px;
+                font-size:22px;
+                transition:1s;
+            }
+            .social{
+                position:absolute;
+                top: 200px;
+                left:30px;
+                font-size :25px;
+                background-color: #ecf0f3;
+                }
+            .social a{
+                margin:2px;
+                border:0px solid black;
+                padding:10px 13px 10px 13px;
+                text-decoration:none;
+                color:purple;
+                border-radius:50%;
+                box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
+            }
+            .intro-right{
+            margin-top:20px;
+            background-color: purple;
+            float: inline-start;
+            width: 100%;
+            height: 60%;
+            border-radius: 0px 0px 20px 20px;
+            animation:5s;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- nav-bar -->
     <nav>
         <div class="logo"><h2>Nagalapuram <span id="s" style="color:purple;">Hareeswar</span></h2></div>
         <div class="list">
@@ -130,18 +258,32 @@
 			<a href="#"><i class="fa fa-id-card-o"></i> About Me</a>
 			<a href="#"><i class="fa fa-briefcase"></i> Portfolio</a>
 			<a href="#"><i class="fa fa-code"></i> Experience</a>
-			<a href="#"><i class="fa fa-home"></i> Home</a>
+			<a href="#home"><i class="fa fa-home"></i> Home</a>
 		</div>
         <div id="ham">
-            <a id="icon" href="#"><i class="fa fa-bars"></i></a>
+            <i class="fa fa-bars"></i>
         </div>
     </nav>
     <div id="pop-up">
-            <a style="border-radius:20px 20px 0px 0px;" href="#"><i class="fa fa-home"></i> Home</a>
+            <a style="border-radius:20px 20px 0px 0px;" href="#home"><i class="fa fa-home"></i> Home</a>
 			<a href="#"><i class="fa fa-code"></i> Experience</a>
 			<a href="#"><i class="fa fa-briefcase"></i> Portfolio</a>
 			<a href="#"><i class="fa fa-id-card-o"></i> About Me</a>
 			<a style="border-radius:0px 0px 20px 20px;" href="#"><i class="fa fa-phone"></i> Contact Me</a>
+    </div>
+    <!-- cover-page -->
+    <div id="Home" class="intro">
+        <div class="intro-left">
+			<h1>HI<span class="hi">&#128075;</span><br>MYSELF <BR><span class="name" style="color:purple;">NAGALAPURAM <br>HAREESWAR</span></h1>
+			<div class="social">
+				<a class="github" href="https://github.com/Nagalapuramhareeswar"><i class="fa fa-github"></i></a>
+				<a class="instagram" href="https://www.instagram.com/hareeswar_harry/"><i class="fa fa-instagram"></i></a>
+				<a class="linkedin" href="https://www.linkedin.com/in/hareeswar-nagalapuram-046494241/"><i class="fa fa-linkedin"></i></a>
+			</div>
+		</div>
+        <div class="intro-right">
+            
+        </div>
     </div>
     <script>
         let demo = document.getElementById("ham");
