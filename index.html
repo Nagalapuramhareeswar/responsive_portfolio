@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hareeswar | Portfolio</title>
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         body{
             background-color: #ecf0f3;
             margin:0 auto;
@@ -14,6 +17,7 @@
         body::-webkit-scrollbar{
             display:none;
         }
+        /* nav-bar starts */
         nav{
             border:1px solid black;
             border-radius:20px;
@@ -23,7 +27,7 @@
             left:5px;
             top:3px;
             background-color:rgba(255 255 255/50%);
-            backdrop-filter:blur(50px);
+            backdrop-filter:blur(5px);
             z-index: 999;
         }
         .logo{
@@ -58,10 +62,17 @@
         #pop-up{
             display:none;
         }
+        /* nav-bar ends */
+
+        /* cover page starts */
+        .cover-page{
+            width:100%;
+            height:100vh;
+        }
         .intro{
             background-color:#ecf0f3;
             width:90%;
-            height:600px;
+            height:550px;
             position:relative;
             top:50px;
             left:5%;	
@@ -83,11 +94,12 @@
         }
         .intro-left{
             background-color:#ecf0f3;
-            width:50%;
+            width:49%;
             height:100%;
             float:left;
             border-radius:20px 20px;
             position:relative;
+            animation: 1s;
         }
         .intro-left h1{
             position:relative;
@@ -136,11 +148,176 @@
         .intro-right{
             background-color: purple;
             float: right;
+            position:relative;
+            overflow: hidden;
             width: 50%;
             height: 100%;
             border-radius: 0px 20px 20px 0px;
-            animation: 1s;
+            border-radius: 25% 4% 3% 25% / 27% 4% 4% 64%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+        /* cover page ends */
+
+        /* skills page starts */
+        .skills-page{
+            width:100%;
+            height:100vh;
+        }
+        .lang{
+            background-color:#ecf0f3;
+            width:90%;
+            height:550px;
+            position:relative;
+            top:50px;
+            left:5%;	
+            border-radius:20px;
+            box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
+        }
+        .lang-left{
+            background-color: #ecf0f3;
+            width:49%;
+            height:100%;
+            border-radius:20px 0px 0px 20px;
+            float:left;
+        }
+        .lang-right{
+            background-color: #ecf0f3;
+            width:49%;
+            height:100%;
+            border-radius:0px 20px 20px 0px;
+            float:right;
+        }
+        .python{
+            width:100px;
+            height:100px;
+            background-color: purple;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position:relative;
+            top:50px;
+            left:50px;
+            transition:1s ease-out;
+            display:inline-block;
+            filter: drop-shadow(13px 13px 20px #cbced1,-13px -13px 20px #fff);
+        }
+        .html{
+            width:100px;
+            height:100px;
+            background-color: purple;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position:relative;
+            top:150px;
+            left: 100px;
+            transition:1s ease-out;
+            display:inline-block;
+        }
+        .css{
+            width:100px;
+            height:100px;
+            background-color: purple;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position:relative;
+            top: 250px;
+            left:-160px;
+            transition:1s ease-out;
+            display:inline-block;
+        }
+        .css img,.html img,.js img,.python img {
+            position:relative;
+            top:20px;
+            left:20px;
+        }
+        .js{
+            width:100px;
+            height:100px;
+            background-color: purple;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position:relative;
+            top: 360px;
+            left:-110px;
+            transition:1s ease-out;
+            display:inline-block;
+        }
+        .exp{
+            width:10%;
+            height:70%;
+            display: flex;
+            border-radius:30px;
+            position:relative;
+            margin: 90px 30px;
+            overflow: hidden;
+            align-items: end;
+            box-shadow: inset 5px 5px 4px #cbced1,inset -5px -5px 4px #fff;
+        }
+        .known{
+            width:10%;
+            height:70%;
+            display:flex;
+            border-radius:30px;
+            position:relative;
+            margin: 90px 30px;
+            overflow: hidden;
+            align-items: end;
+            box-shadow: inset 5px 5px 4px #cbced1,inset -5px -5px 4px #fff;
+            top:-476px;
+            left:250px;
+        }
+        .exp-score{
+            background-color:rgba(253,29,29,0.3);
+            width:100%;
+            height:0%;
+            border-radius: 30px;
+            transition:1s;
+        }
+        .known-score{
+            background-color:rgba(253,29,29,0.3);
+            width:100%;
+            height:0%;
+            border-radius: 30px;
+            transition:1s;
+        }
+        .known-score-top{
+            width:100%;
+            height: 20px;
+            background-color: rgb(228, 135, 135);
+            border-radius: 50%;
+            border-bottom : 5px solid #fff;
+            transition: 1s;
+        }
+        .exp-score-top{
+            width:100%;
+            height: 20px;
+            background-color: rgb(247, 223, 127);
+            border-radius: 50%;
+            border-bottom : 5px solid #fff;
+            transition: 1s;
+        }
+        .glass-1{
+            border-radius: 30px;
+            position: relative;
+            width:10%;
+            height:70%;
+            top:-950px;
+            left:30px;
+            background-color: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: -5px -5px 14px #cbced1, 5px 5px 14px #fff ;
+        }
+        .glass-2{
+            /* border: 1px solid red; */
+            border-radius: 30px;
+            position: relative;
+            width:10%;
+            height:70%;
+            top:-1335.5px;
+            left:280px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: -5px -5px 14px #cbced1, 5px 5px 14px #fff ;
+        }
+        /* skills page ends */
+
 
 
 
@@ -191,7 +368,7 @@
                 top:37px;
                 left:43%;
                 background-color:rgba(255 255 255/30%);
-                backdrop-filter:blur(100px);
+                backdrop-filter:blur(5px);
                 border: 1px solid black;
                 display: none;
             }
@@ -207,8 +384,18 @@
             }
             #pop-up a:hover{
                 border-bottom:5px solid purple;
+                background-color:rgba(255 255 255/50%);
+                backdrop-filter: blur(3px);
+            }
+            .intro{
                 background-color:#ecf0f3;
-                box-shadow: inset 3px 3px 5px #cbced1,inset -3px -3px 5px #fff;
+                width:90%;
+                height:600px;
+                position:relative;
+                top:50px;
+                left:5%;
+                border-radius:20px;
+                box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
             }
             .intro-left{
                 width:100%;
@@ -229,22 +416,93 @@
                 background-color: #ecf0f3;
                 }
             .social a{
-                margin:2px;
-                border:0px solid black;
-                padding:10px 13px 10px 13px;
+                margin:9px;
+                padding:10px 15px 10px 13px;
                 text-decoration:none;
+                height:10px;
                 color:purple;
                 border-radius:50%;
                 box-shadow:13px 13px 20px #cbced1,-13px -13px 20px #fff;
             }
             .intro-right{
-            margin-top:20px;
+                margin-top:40px;
+                background-color:purple;
+                float: inline-start;
+                width: 100%;
+                height:53.3%;
+                border-radius: 60% 36% 4% 5% / 63% 38% 5% 5%;
+            }
+            .lang{
+                top:50px;
+            }
+            .lang-left .python{
+            width:80px;
+            height:80px;
             background-color: purple;
-            float: inline-start;
-            width: 100%;
-            height: 60%;
-            border-radius: 0px 0px 20px 20px;
-            animation:5s;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position:relative;
+            top:20px;
+            left:10px;
+            }
+            .lang-left .html{
+            width:80px;
+            height:80px;
+            background-color: purple;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position:relative;
+            top:30px;
+            left:50px;
+            }
+            .lang-left .css{
+            width:80px;
+            height:80px;
+            background-color: purple;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position:relative;
+            top:40px;
+            left:10px;
+            }
+            .lang-left .js{
+            width:80px;
+            height:80px;
+            background-color: purple;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position:relative;
+            top:50px;
+            left:50px;
+            }
+            .lang-right .exp{
+                width:20%;
+            }
+            .lang-right .known{
+                width:20%;
+                height:70%;
+                border-radius:30px;
+                margin: 90px 30px;
+                position:relative;
+                top:-477px;
+                left:50px;
+            }
+            .glass-1{
+                width:20%;
+            }
+            .glass-2{
+                left:80px;
+                width:20%;
+                top:-1337px;
+            }
+            .css,.js,.html,.python{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .css img,.html img,.python img,.js img{
+                position:relative;
+                top:0px;
+                left:0px;
+            }
+            .exp-score-top,.known-score-top{
+                height:10px;
             }
         }
     </style>
@@ -256,47 +514,156 @@
         <div class="list">
 			<a href="#"><i class="fa fa-phone"></i> Contact Me</a>
 			<a href="#"><i class="fa fa-id-card-o"></i> About Me</a>
-			<a href="#"><i class="fa fa-briefcase"></i> Portfolio</a>
-			<a href="#"><i class="fa fa-code"></i> Experience</a>
-			<a href="#home"><i class="fa fa-home"></i> Home</a>
+			<a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a>
+			<a href="#skills"><i class="fa fa-code"></i> Skills</a>
+			<a href="#Home"><i class="fa fa-home"></i> Home</a>
 		</div>
         <div id="ham">
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" aria-hidden="true" id="thumbsIcon"></i>
         </div>
     </nav>
+    <!-- nav bar ends -->
+
+    <!-- menu -->
     <div id="pop-up">
-            <a style="border-radius:20px 20px 0px 0px;" href="#home"><i class="fa fa-home"></i> Home</a>
-			<a href="#"><i class="fa fa-code"></i> Experience</a>
-			<a href="#"><i class="fa fa-briefcase"></i> Portfolio</a>
+            <a style="border-radius:20px 20px 0px 0px;" href="#Home"><i class="fa fa-home"></i> Home</a>
+			<a href="#skills"><i class="fa fa-code"></i> Skills</a>
+			<a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a>
 			<a href="#"><i class="fa fa-id-card-o"></i> About Me</a>
 			<a style="border-radius:0px 0px 20px 20px;" href="#"><i class="fa fa-phone"></i> Contact Me</a>
     </div>
-    <!-- cover-page -->
-    <div id="Home" class="intro">
-        <div class="intro-left">
-			<h1>HI<span class="hi">&#128075;</span><br>MYSELF <BR><span class="name" style="color:purple;">NAGALAPURAM <br>HAREESWAR</span></h1>
-			<div class="social">
-				<a class="github" href="https://github.com/Nagalapuramhareeswar"><i class="fa fa-github"></i></a>
-				<a class="instagram" href="https://www.instagram.com/hareeswar_harry/"><i class="fa fa-instagram"></i></a>
-				<a class="linkedin" href="https://www.linkedin.com/in/hareeswar-nagalapuram-046494241/"><i class="fa fa-linkedin"></i></a>
-			</div>
-		</div>
-        <div class="intro-right">
-            
+    <!-- menu ends -->
+
+    <main>
+        <!-- cover-page -->
+        <div class="cover-page" id="Home">
+            <div class="intro">
+                <div class="intro-left">
+                    <h1>HI<span class="hi">&#128075;</span><br>MYSELF <BR><span class="name" style="color:purple;">NAGALAPURAM <br>HAREESWAR</span></h1>
+                    <div class="social">
+                        <a class="github" href="https://github.com/Nagalapuramhareeswar"><i class="fa fa-github"></i></a>
+                        <a class="instagram" href="https://www.instagram.com/hareeswar_harry/"><i class="fa fa-instagram"></i></a>
+                        <a class="linkedin" href="https://www.linkedin.com/in/hareeswar-nagalapuram/"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="intro-right">
+                    <!-- <img style="height:100% ; width: 100%;" src="https://lh3.googleusercontent.com/pw/AIL4fc_KAIo0ZgErMbp538UfVKY9QIjeLrb3RqdPP3iZsft5tiOWggPcg2MHdZwqhrEC7WyBh3Nz_lhoEri6rbEcSfnqSMi0YtRFgHRNQyf490mjidH8GLOWEPVcWFh6P_jDWIFbHpoPJCE5Mou0rcMtayYV=w723-h963-s-no?authuser=0" alt=""> -->
+                </div>
+            </div>
         </div>
-    </div>
+        <!-- cover page ends -->
+
+        <!-- skills page starts-->
+        <div class="skills-page" id="skills">
+            <div class="lang" id="lang">
+                <div class="lang-left">
+                    <div class="python" id="python" title="python">
+                        <img style="width: 60px; height: 60px;" src="https://static.vecteezy.com/system/resources/previews/012/697/295/original/3d-python-programming-language-logo-free-png.png" alt="">
+                    </div>
+                    <div class="html" id="html" title="html">
+                        <img style="width: 60px; height: 60px;" src="https://i.ibb.co/RHz7gp2/vecteezy-stylized-3d-html-logo-design-12697299-717.png" alt="">
+                    </div>
+                    <div class="css" id="css" title="css">
+                        <img style="width: 60px; height: 60px;" src="https://static.vecteezy.com/system/resources/thumbnails/012/697/301/small_2x/3d-css-icon-design-free-png.png" alt="">
+                    </div>
+                    <div class="js" id="js" title="javascript">
+                        <img style="width: 60px; height: 60px;" src="https://static.vecteezy.com/system/resources/thumbnails/012/697/298/small_2x/3d-javascript-logo-design-free-png.png" alt="">
+                    </div>
+                </div>
+                <div class="lang-right">
+                    <div class="exp">
+                        <div class="exp-score" id="exp-score">
+                            <div class="exp-score-top" id="exp-score-top">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="known">
+                        <div class="known-score" id="known-score">
+                            <div class="known-score-top" id="known-score-top">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-1" id="glass-1"></div>
+                    <div class="glass-2"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- skills page ends -->
+    <!-- script starts here -->
     <script>
         let demo = document.getElementById("ham");
-        demo.addEventListener("click", options);
+        let popup = document.getElementById("pop-up");
+        let python = document.getElementById("python");
+        let html = document.getElementById("html");
+        let css = document.getElementById("css");
+        let js = document.getElementById("js");
+        let expscore = document.getElementById("exp-score");
+        let knownscore = document.getElementById("known-score");
+        let knownscoretop = document.getElementById("known-score-top");
+        let expscoretop = document.getElementById("exp-score-top");
+        demo.addEventListener('click', options);
         let a=0;
         function options() {
-            if(a==0){
-                document.getElementById("pop-up").style.display= "block";
+            if(a===0){
+                popup.style.display= "block";
+                document.getElementById('thumbsIcon').style.color="red";
                 a++;
             }else{
-            document.getElementById("pop-up").style.display= "none";
-            a--;
+                popup.style.display= "none";
+                document.getElementById('thumbsIcon').style.color="purple";
+                a--;
             }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon = document.getElementById('thumbsIcon');
+            icon.addEventListener('click', function () {
+                icon.classList.toggle("fa-bars");
+                icon.classList.toggle("fa-times");
+            });
+        });
+        python.addEventListener('mouseover',function(){
+            expscore.style.height="75%";
+            expscore.style.background="gold";
+            knownscore.style.height="70%";
+            knownscore.style.background="green";
+            knownscoretop.style.background="lightgreen";
+            expscoretop.style.background="rgb(247, 223, 127)";
+        });
+        html.addEventListener('mouseover',function(){
+            expscore.style.height="95%";
+            expscore.style.background="green";
+            knownscore.style.height="60%";
+            knownscore.style.background="orangered";
+            knownscoretop.style.background="rgb(228,135,135)";
+            expscoretop.style.background="lightgreen";
+        });
+        css.addEventListener('mouseover',function(){
+            expscore.style.height="85%";
+            expscore.style.background="green";
+            knownscore.style.height="60%";
+            knownscore.style.background="orangered";
+            knownscoretop.style.background="rgb(228,135,135)";
+            expscoretop.style.background="lightgreen";
+        });
+        js.addEventListener('mouseover',function(){
+            expscore.style.height="60%";
+            expscore.style.background="gold";
+            knownscore.style.height="50%";
+            knownscore.style.background="red";
+            knownscoretop.style.background="rgb(228,135,135)";
+            expscoretop.style.background="rgb(255,223,127)";
+        });
+        python.addEventListener('mouseleave',clear);
+        html.addEventListener('mouseleave',clear);
+        css.addEventListener('mouseleave',clear);
+        js.addEventListener('mouseleave',clear);
+        function clear(){
+            expscore.style.height="0%";
+            knownscore.style.height="0%";
+            percentage.innerHTML= " ";
         }
     </script>
 </body>
